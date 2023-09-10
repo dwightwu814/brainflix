@@ -1,0 +1,70 @@
+@import "styles/partials/variables";
+@import "styles/partials/mixins";
+
+* {
+  box-sizing: border-box;
+  font-family: $font-stack;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.section {
+  @include side-margins;
+  display: flex;
+  &__header {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.below {
+  display: flex;
+  flex-direction: row;
+  gap: $padding-md;
+
+  @include tablet {
+    flex-direction: column;
+  }
+  @include mobile {
+    flex-direction: column;
+    gap: $padding-sm;
+  }
+
+  & > * {
+    flex-direction: column;
+  }
+
+  &__first {
+    width: $col-lg-8;
+    border-right: $divide-line;
+    gap: $padding-md;
+
+    @include tablet {
+      width: 100%;
+      border-right: none;
+    }
+
+    @include mobile {
+      width: 100%;
+      border-right: none;
+      gap: $padding-sm;
+    }
+  }
+
+  &__second {
+    width: $col-lg-4;
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

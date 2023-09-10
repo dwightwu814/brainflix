@@ -1,0 +1,64 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding-right: $padding-md;
+
+  @include tablet {
+    padding-right: 0;
+  }
+
+  @include mobile {
+    padding-right: 0;
+  }
+  &__title {
+    @include header;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: $divide-line;
+    padding-bottom: $padding-xsm;
+
+    @include mobile {
+      border-top: $divide-line;
+      padding-top: $padding-xsm;
+    }
+
+    &--item {
+      display: flex;
+      gap: $padding-md;
+
+      @include mobile {
+        flex-direction: column;
+        gap: $padding-sm;
+        width: $col-sm-5;
+      }
+    }
+
+    &--author {
+      @include subheader;
+    }
+
+    &--date {
+      @include regular;
+      color: $silver;
+    }
+
+    &--stats {
+      @include regular;
+      color: $silver;
+      display: flex;
+      align-items: center;
+      gap: $padding-xsm;
+    }
+  }
+
+  &__description {
+    @include regular;
+    width: 100%;
+  }
+}

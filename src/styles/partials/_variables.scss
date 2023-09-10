@@ -1,0 +1,50 @@
+@import "fonts";
+
+$font-stack: AvenirNextLTPro, Helvetica, Arial, sans-serif;
+
+// Colors - primary
+$black: #323232;
+$blue: #0095ff;
+$silver: #afafaf;
+$white: #ffffff;
+
+// Colors - secondary
+$dark-black: #000000;
+$dark-blue: #0065ad;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+
+$divide-line: 1px solid $mercury;
+
+// Measurements
+$padding-sm: 16px;
+$padding-md: 24px;
+$padding-lg: 36px;
+$padding-xsm: 8px;
+$border-radius: 4px;
+$button-height: 40px;
+
+$col-width-desktop: 63px;
+
+$col-lg-1: 63px;
+$col-lg-2: calc(63px * 2 + 24px);
+$col-lg-3: calc(63px * 3 + 24px * 2);
+$col-lg-4: calc(63px * 4 + 24px * 3);
+$col-lg-5: calc(63px * 5 + 24px * 4);
+$col-lg-6: calc(63px * 6 + 24px * 5);
+$col-lg-7: calc(63px * 7 + 24px * 6);
+$col-lg-8: calc(63px * 8 + 24px * 7);
+
+$col-md-1: calc(calc(100vw - 72px - 264px) / 12);
+$col-md-2: calc(calc(calc(100vw - 72px - 264px) / 6) + 24px);
+$col-md-3: calc(calc(calc(100vw - 72px - 264px) / 4) + 48px);
+$col-md-4: calc(calc(calc(100vw - 72px - 264px) / 3) + 72px);
+$col-md-5: calc(calc(calc(100vw - 72px - 264px) * 5 / 12) + 96px);
+$col-md-6: calc(calc(calc(100vw - 72px - 264px) / 2) + 120px);
+
+$col-sm-1: calc(calc(100vw - 32px - 80px) / 6);
+$col-sm-2: calc(calc(calc(100vw - 32px - 80px) / 3) + 16px);
+$col-sm-3: calc(calc(calc(100vw - 32px - 80px) / 2) + 32px);
+$col-sm-4: calc(calc(calc(100vw - 32px - 80px) * 2 / 3) + 48px);
+$col-sm-5: calc(calc(calc(100vw - 32px - 80px) * 5 / 6) + 64px);
+$col-sm-6: calc(100vw - 32px);

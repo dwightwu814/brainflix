@@ -1,0 +1,70 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.gallery {
+  padding-top: $padding-md;
+
+  @include tablet {
+    padding-top: 0;
+  }
+
+  @include mobile {
+    padding-top: 0;
+  }
+
+  &__title {
+    @include label;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: $padding-md;
+    margin-top: $padding-sm;
+
+    @include tablet {
+      margin-top: $padding-md;
+    }
+
+    @include mobile {
+      gap: $padding-sm;
+      margin-top: $padding-md;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: $padding-sm;
+
+    &--thumbnail {
+      cursor: pointer;
+      width: calc($button-height * 3.5);
+      min-width: calc($button-height * 3.5);
+
+      height: calc($button-height * 2);
+      object-fit: cover;
+      border-radius: $border-radius;
+
+      @include tablet {
+        width: calc($button-height * 3.5);
+      }
+
+      @include mobile {
+        width: 40%;
+        max-width: calc($button-height * 3.5);
+      }
+    }
+
+    &--info {
+      max-width: calc(100% - calc($button-height * 3.5));
+      display: flex;
+      flex-direction: column;
+      gap: $padding-xsm;
+    }
+
+    &--title {
+      @include subheader;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.button {
+  @include label-cta;
+  background-color: $blue;
+  border: 0;
+  border-radius: $border-radius;
+  padding: $padding-xsm;
+  height: $button-height;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $dark-blue;
+  }
+
+  &:active {
+    background-color: $black;
+  }
+
+  &__icon {
+    position: absolute;
+    left: $padding-xsm;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

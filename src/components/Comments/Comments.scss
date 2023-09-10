@@ -1,0 +1,64 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.comments {
+  &__title {
+    @include subheader;
+  }
+
+  @include tablet {
+    border-bottom: $divide-line;
+  }
+
+  @include mobile {
+    border-bottom: $divide-line;
+  }
+
+  &__display {
+    width: 100%;
+    display: flex;
+    gap: $padding-md;
+
+    border-top: $divide-line;
+    padding: $padding-md $padding-md $padding-md 0;
+
+    @include tablet {
+      padding: $padding-md 0;
+    }
+
+    @include mobile {
+      padding: $padding-sm 0;
+      gap: $padding-sm;
+    }
+
+    &--photo {
+      width: $button-height;
+      height: $button-height;
+      border-radius: 50%;
+      background-color: $mercury;
+    }
+
+    &--rest {
+      width: 100%;
+    }
+
+    &--top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--name {
+      @include subheader;
+    }
+
+    &--date {
+      @include regular;
+      color: $silver;
+    }
+
+    &--text {
+      @include regular;
+      margin-bottom: 0;
+    }
+  }
+}

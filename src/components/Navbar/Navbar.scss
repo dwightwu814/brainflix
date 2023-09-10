@@ -1,0 +1,72 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.navbar {
+  padding-top: $padding-md;
+  padding-bottom: $padding-md;
+  background-color: $white;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mobile {
+    flex-direction: column;
+    gap: $padding-sm;
+    padding-top: $padding-sm;
+    padding-bottom: $padding-sm;
+  }
+
+  &__logo {
+    width: $col-lg-2;
+    cursor: pointer;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: $padding-md;
+
+    @include mobile {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: $padding-sm;
+      justify-content: space-between;
+    }
+
+    &--search {
+      @include input;
+      width: $col-lg-3;
+      background-image: url("../../assets/images/icons/search.svg");
+      background-repeat: no-repeat;
+      background-position: $padding-xsm center;
+      padding-left: $padding-lg;
+
+      @include tablet {
+        width: $col-md-3;
+      }
+
+      @include mobile {
+        width: $col-sm-5;
+      }
+    }
+
+    &--button {
+      width: $col-lg-2;
+
+      @include tablet {
+        width: $col-md-2;
+      }
+
+      @include mobile {
+        order: 1;
+        width: 100%;
+      }
+    }
+
+    &--profile {
+      height: $button-height;
+      width: $button-height;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+}

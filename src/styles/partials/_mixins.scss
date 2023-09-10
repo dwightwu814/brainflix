@@ -1,0 +1,115 @@
+@import "variables";
+
+@mixin desktop {
+  @media (min-width: 1280) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin side-margins() {
+  width: 100%;
+  padding-left: calc(calc(100vw - 1024px) / 2);
+  padding-right: calc(calc(100vw - 1024px) / 2);
+
+  @include mobile {
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+  }
+
+  @include tablet {
+    padding-left: $padding-md;
+    padding-right: $padding-md;
+  }
+}
+
+// Text
+@mixin header {
+  font-size: 33px;
+  line-height: 44px;
+  font-weight: 700;
+  margin: $padding-lg 0 $padding-md;
+  @include mobile {
+    font-size: 24px;
+    line-height: 32px;
+    margin: $padding-md 0 $padding-sm;
+  }
+}
+
+@mixin subheader {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
+  @include mobile {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@mixin regular {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: $black;
+  @include mobile {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@mixin label {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $silver;
+  @include mobile {
+    font-size: 10px;
+    line-height: 20px;
+  }
+}
+
+@mixin label-cta {
+  @include label;
+  color: $white;
+}
+
+@mixin input {
+  border-radius: $border-radius;
+  border: 1px solid $mercury;
+  background-color: $alabaster;
+  height: $button-height;
+  &::placeholder {
+    @include regular;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  padding-left: $padding-xsm;
+  padding-right: $padding-xsm;
+}
+
+@mixin text-area {
+  border-radius: $border-radius;
+  border: 1px solid $mercury;
+  background-color: $alabaster;
+  height: $button-height;
+  &::placeholder {
+    @include regular;
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+  }
+  padding: $padding-xsm;
+}

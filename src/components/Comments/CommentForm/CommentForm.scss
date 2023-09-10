@@ -1,0 +1,70 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.comment__form {
+  display: flex;
+  gap: $padding-md;
+  padding-right: $padding-md;
+  padding-bottom: $padding-md;
+
+  @include tablet {
+    padding-right: 0;
+  }
+
+  @include mobile {
+    gap: $padding-sm;
+    padding-right: 0;
+    padding-bottom: $padding-sm;
+  }
+
+  &--profile {
+    width: $button-height;
+    height: $button-height;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: calc($button-height / 2);
+  }
+
+  &--wrapper {
+    width: 100%;
+    display: flex;
+    gap: $padding-md;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $padding-sm;
+    }
+  }
+
+  &--form {
+    width: 100%;
+  }
+
+  &--text {
+    @include label;
+  }
+
+  &--input {
+    @include input;
+    width: 100%;
+
+    @include mobile {
+      @include text-area;
+      height: 100px;
+    }
+  }
+
+  &--submit {
+    width: $col-lg-3;
+    margin-top: calc($button-height / 2);
+
+    @include tablet {
+      width: $col-md-3;
+    }
+
+    @include mobile {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+}
