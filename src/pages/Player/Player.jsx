@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import Header from "../../components/Header/Header";
@@ -58,8 +58,6 @@ function PlayerPage() {
     getVideo(currentVideoId, (video) => setCurrentVideo(video));
   }, [currentVideoId]);
 
-  const navigate = useNavigate();
-
   return (
     <>
       <Navbar />
@@ -74,9 +72,6 @@ function PlayerPage() {
             videos={videos.filter((video) => {
               return video.id !== currentVideoId;
             })}
-            handleClick={(id) => {
-              navigate(`/video/${id}`);
-            }}
           />
         </section>
       </section>

@@ -65,6 +65,8 @@
     &--title {
       @include subheader;
       cursor: pointer;
+      color: $black;
+      text-decoration: none;
     }
   }
 }
