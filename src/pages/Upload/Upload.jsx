@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Upload.scss";
 import UploadThumbnail from "../../assets/images/upload-thumbnail.jpg";
 import PublishIcon from "../../assets/images/icons/publish.svg";
@@ -33,20 +34,30 @@ function UploadFormMain() {
 }
 
 function UploadFormSubmit() {
+  const [buttonText, setButtonText] = useState("PUBLISH");
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    setButtonText("PUBLISHING...");
+    setTimeout(() => {
+      setButtonText("PUBLISHED!");
+      setTimeout(() => {
+        navigate("/");
+      }, 500);
+    }, 1000);
+  };
+
   return (
     <div className="upload-page__submit">
       <div className="upload-page__button">
-        <LightButton
-          className="upload-page__button--publish"
-          text="Cancel"
-          icon={PublishIcon}
-        />
+        <LightButton className="upload-page__button--publish" text="Cancel" />
       </div>
       <div className="upload-page__button">
         <Button
           className="upload-page__button--publish"
-          text="PUBLISH"
+          text={buttonText}
           icon={PublishIcon}
+          handleClick={handleSubmit}
         />
       </div>
     </div>
