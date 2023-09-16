@@ -7,6 +7,7 @@ import Comments from "../../components/Comments/Comments";
 import NextVideosGallery from "../../components/NextVideosGallery/NextVideosGallery";
 import apiKey from "../../data/api-key.js";
 import axios from "axios";
+import "./Player.scss";
 
 const urlRoot = "https://project-2-api.herokuapp.com/";
 
@@ -62,12 +63,12 @@ function PlayerPage() {
     <>
       <Navbar />
       <VideoPlayer posterUrl={currentVideo ? currentVideo.image : null} />
-      <section className="section below">
-        <section className="below__first">
+      <section className="section player-page">
+        <section className="player-page__first">
           <Header video={currentVideo} />
           <Comments comments={currentVideo ? currentVideo.comments : []} />
         </section>
-        <section className="below__second">
+        <section className="player-page__second">
           <NextVideosGallery
             videos={videos.filter((video) => {
               return video.id !== currentVideoId;
