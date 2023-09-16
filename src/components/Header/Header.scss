@@ -38,16 +38,14 @@
         width: $col-sm-5;
       }
     }
-
-    &--stats {
-      @include regular;
-      color: $silver;
-      display: flex;
-      align-items: center;
-      gap: $padding-xsm;
-    }
   }
-
+  &__stats {
+    @include regular;
+    color: $silver;
+    display: flex;
+    align-items: center;
+    gap: $padding-xsm;
+  }
   &__author {
     @include subheader;
   }
