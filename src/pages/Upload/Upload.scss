@@ -1,0 +1,13 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.upload {
+  &__title {
+    border-bottom: $divide-line;
+    width: 100%;
+
+    &--text {
+      @include header;
+    }
+  }
+}
