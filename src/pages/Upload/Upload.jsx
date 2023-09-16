@@ -33,16 +33,18 @@ function UploadFormMain() {
   );
 }
 
-function UploadFormSubmit() {
+function UploadFormSubmit({ userName }) {
   const [buttonText, setButtonText] = useState("PUBLISH");
   const navigate = useNavigate();
+
+  const homeLink = userName ? `/${userName}` : "/";
 
   const handleSubmit = () => {
     setButtonText("PUBLISHING...");
     setTimeout(() => {
       setButtonText("PUBLISHED!");
       setTimeout(() => {
-        navigate("/");
+        navigate(homeLink);
       }, 500);
     }, 1000);
   };
@@ -64,11 +66,11 @@ function UploadFormSubmit() {
   );
 }
 
-function UploadForm() {
+function UploadForm({ userName }) {
   return (
     <form>
       <UploadFormMain />
-      <UploadFormSubmit />
+      <UploadFormSubmit userName={userName} />
     </form>
   );
 }
@@ -82,7 +84,7 @@ export default function UploadPage() {
         <section className="upload-page__title">
           <h1 className="upload-page__title--text">Upload Video</h1>
         </section>
-        <UploadForm />
+        <UploadForm userName={userName} />
       </section>
     </>
   );
