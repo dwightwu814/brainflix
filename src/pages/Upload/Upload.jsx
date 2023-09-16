@@ -4,6 +4,7 @@ import UploadThumbnail from "../../assets/images/upload-thumbnail.jpg";
 import PublishIcon from "../../assets/images/icons/publish.svg";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/utils/Button/Button";
+import LightButton from "../../components/utils/LightButton/LightButton";
 
 function UploadFormMain() {
   return (
@@ -35,7 +36,7 @@ function UploadFormSubmit() {
   return (
     <div className="upload-page__submit">
       <div className="upload-page__button">
-        <Button
+        <LightButton
           className="upload-page__button--publish"
           text="Cancel"
           icon={PublishIcon}

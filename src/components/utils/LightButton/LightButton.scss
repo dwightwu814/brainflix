@@ -1,0 +1,23 @@
+@import "../../../styles/partials/variables";
+@import "../../../styles/partials/mixins";
+
+.light-button {
+  @include label-cta;
+  color: $blue;
+  border: 0;
+  padding: $padding-xsm;
+  height: $button-height;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  background-color: transparent;
+
+  &:hover {
+    color: $dark-blue;
+  }
+
+  &:active {
+    color: $dark-blue;
+  }
+}
