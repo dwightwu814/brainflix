@@ -5,14 +5,14 @@ import timestampToTimeString from "../../helperFunctions/timestampToTimeString";
 function OneComment({ comment }) {
   const timeString = timestampToTimeString(comment.timestamp);
   return (
-    <section className="comments__display">
-      <div className="comments__display--photo"></div>
-      <section className="comments__display--rest">
-        <div className="comments__display--top">
-          <div className="comments__display--name">{comment.name}</div>
-          <div className="comments__display--date">{timeString}</div>
+    <section className="comment">
+      <div className="comment__photo"></div>
+      <section className="comment__rest">
+        <div className="comment__top">
+          <div className="comment__name">{comment.name}</div>
+          <div className="comment__date">{timeString}</div>
         </div>
-        <p className="comments__display--text">{comment.comment}</p>
+        <p className="comment__text">{comment.comment}</p>
       </section>
     </section>
   );

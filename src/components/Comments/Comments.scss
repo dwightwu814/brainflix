@@ -13,52 +13,52 @@
   @include mobile {
     border-bottom: $divide-line;
   }
+}
 
-  &__display {
+.comment {
+  width: 100%;
+  display: flex;
+  gap: $padding-md;
+
+  border-top: $divide-line;
+  padding: $padding-md $padding-md $padding-md 0;
+
+  @include tablet {
+    padding: $padding-md 0;
+  }
+
+  @include mobile {
+    padding: $padding-sm 0;
+    gap: $padding-sm;
+  }
+
+  &__photo {
+    width: $button-height;
+    height: $button-height;
+    border-radius: 50%;
+    background-color: $mercury;
+  }
+
+  &__rest {
     width: 100%;
+  }
+
+  &__top {
     display: flex;
-    gap: $padding-md;
+    justify-content: space-between;
+  }
 
-    border-top: $divide-line;
-    padding: $padding-md $padding-md $padding-md 0;
+  &__name {
+    @include subheader;
+  }
 
-    @include tablet {
-      padding: $padding-md 0;
-    }
+  &__date {
+    @include regular;
+    color: $silver;
+  }
 
-    @include mobile {
-      padding: $padding-sm 0;
-      gap: $padding-sm;
-    }
-
-    &--photo {
-      width: $button-height;
-      height: $button-height;
-      border-radius: 50%;
-      background-color: $mercury;
-    }
-
-    &--rest {
-      width: 100%;
-    }
-
-    &--top {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &--name {
-      @include subheader;
-    }
-
-    &--date {
-      @include regular;
-      color: $silver;
-    }
-
-    &--text {
-      @include regular;
-      margin-bottom: 0;
-    }
+  &__text {
+    @include regular;
+    margin-bottom: 0;
   }
 }
