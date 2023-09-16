@@ -24,9 +24,12 @@ export default function Comments({ comments, onCommentSubmit }) {
     <section className="comments">
       <h2 className="comments__title">{`${commentsLength} Comments`}</h2>
       <CommentForm onCommentSubmit={onCommentSubmit} />
-      {comments.map((comment) => {
-        return <OneComment key={comment.id} comment={comment} />;
-      })}
+      {comments
+        .slice(0)
+        .reverse()
+        .map((comment) => {
+          return <OneComment key={comment.id} comment={comment} />;
+        })}
     </section>
   );
 }
