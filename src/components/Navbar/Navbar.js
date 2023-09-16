@@ -23,7 +23,9 @@ export default function Navbar() {
       <div className="navbar__menu">
         <Searchbar />
         <div className="navbar__button">
-          <Button icon={UploadIcon} text="Upload" />
+          <Link to="/upload" className="navbar__link">
+            <Button icon={UploadIcon} text="Upload" />
+          </Link>
         </div>
         <img className="navbar__profile" src={ProfilePhoto} alt="profile" />
       </div>
