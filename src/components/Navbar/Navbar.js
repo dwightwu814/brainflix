@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 import Button from "../utils/Button/Button";
 import Logo from "../../assets/images/logo.svg";
 import ProfilePhoto from "../../assets/images/user-profile-photo.jpg";
@@ -20,7 +21,9 @@ function Searchbar() {
 export default function Navbar() {
   return (
     <section className="section navbar">
-      <img className="navbar__logo" src={Logo} alt="logo" href="." />
+      <Link to="/" className="navbar__link">
+        <img className="navbar__logo" src={Logo} alt="logo" href="." />
+      </Link>
       <div className="navbar__menu">
         <Searchbar />
         <div className="navbar__menu--button">
