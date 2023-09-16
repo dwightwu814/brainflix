@@ -6,16 +6,16 @@ function NextVideoItem({ video }) {
     <section className="gallery__item">
       <Link to={`/video/${video.id}`}>
         <img
-          className="gallery__item--thumbnail"
+          className="gallery__thumbnail"
           src={video.image}
           alt={video.title}
         />
       </Link>
-      <div className="gallery__item--info">
-        <Link to={`/video/${video.id}`} className="gallery__item--title">
+      <div className="gallery__info">
+        <Link to={`/video/${video.id}`} className="gallery__name">
           {video.title}
         </Link>
-        <div className="gallery__item--channel">{video.channel}</div>
+        <div className="gallery__channel">{video.channel}</div>
       </div>
     </section>
   );
