@@ -9,11 +9,7 @@ import UploadIcon from "../../assets/images/icons/upload.svg";
 function Searchbar() {
   return (
     <form>
-      <input
-        className="navbar__menu--search"
-        type="text"
-        placeholder="Search"
-      />
+      <input className="navbar__search" type="text" placeholder="Search" />
     </form>
   );
 }
@@ -26,14 +22,10 @@ export default function Navbar() {
       </Link>
       <div className="navbar__menu">
         <Searchbar />
-        <div className="navbar__menu--button">
+        <div className="navbar__button">
           <Button icon={UploadIcon} text="Upload" />
         </div>
-        <img
-          className="navbar__menu--profile"
-          src={ProfilePhoto}
-          alt="profile"
-        />
+        <img className="navbar__profile" src={ProfilePhoto} alt="profile" />
       </div>
     </section>
   );

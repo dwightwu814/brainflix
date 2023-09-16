@@ -31,42 +31,41 @@
       gap: $padding-sm;
       justify-content: space-between;
     }
+  }
+  &__search {
+    @include input;
+    width: $col-lg-3;
+    background-image: url("../../assets/images/icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: $padding-xsm center;
+    padding-left: $padding-lg;
 
-    &--search {
-      @include input;
-      width: $col-lg-3;
-      background-image: url("../../assets/images/icons/search.svg");
-      background-repeat: no-repeat;
-      background-position: $padding-xsm center;
-      padding-left: $padding-lg;
-
-      @include tablet {
-        width: $col-md-3;
-      }
-
-      @include mobile {
-        width: $col-sm-5;
-      }
+    @include tablet {
+      width: $col-md-3;
     }
 
-    &--button {
-      width: $col-lg-2;
+    @include mobile {
+      width: $col-sm-5;
+    }
+  }
 
-      @include tablet {
-        width: $col-md-2;
-      }
+  &__button {
+    width: $col-lg-2;
 
-      @include mobile {
-        order: 1;
-        width: 100%;
-      }
+    @include tablet {
+      width: $col-md-2;
     }
 
-    &--profile {
-      height: $button-height;
-      width: $button-height;
-      object-fit: cover;
-      border-radius: 50%;
+    @include mobile {
+      order: 1;
+      width: 100%;
     }
+  }
+
+  &__profile {
+    height: $button-height;
+    width: $button-height;
+    object-fit: cover;
+    border-radius: 50%;
   }
 }
