@@ -31,12 +31,31 @@ const getVideo = async (videoId, handleResult) => {
   }
 };
 
+const postComment = async (videoId, userName, comment, handleNewComments) => {
+  const postBody = {
+    name: userName,
+    comment: comment,
+  };
+  try {
+    await axios.post(
+      `${urlRoot}videos/${videoId}/comments?api_key=${apiKey}}`,
+      postBody
+    );
+    getVideo(videoId, (data) => {
+      handleNewComments(data.comments);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 function PlayerPage() {
   const { videoId, userName } = useParams();
 
   const [videos, setVideos] = useState([]);
   const [currentVideoId, setCurrentVideoId] = useState(null);
   const [currentVideo, setCurrentVideo] = useState(null);
+  const [comments, setComments] = useState([]);
 
   // Get list of videos on load
   useEffect(() => {
@@ -53,6 +72,12 @@ function PlayerPage() {
     }
   }, [videos, videoId]);
 
+  // Update comments on currentVideo change
+  useEffect(() => {
+    if (!currentVideo) return;
+    setComments(currentVideo.comments);
+  }, [currentVideo]);
+
   // Get current video on currentVideoId change
   useEffect(() => {
     if (!currentVideoId) return;
@@ -67,9 +92,16 @@ function PlayerPage() {
         <section className="player-page__first">
           <Header video={currentVideo} />
           <Comments
-            comments={currentVideo ? currentVideo.comments : []}
-            onSubmit={(comment) => {
-              console.log(comment);
+            comments={comments}
+            onCommentSubmit={(comment) => {
+              postComment(
+                currentVideoId,
+                userName || "Anonymous",
+                comment,
+                (newComments) => {
+                  setComments(newComments);
+                }
+              );
             }}
           />
         </section>

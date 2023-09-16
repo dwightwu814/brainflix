@@ -4,12 +4,12 @@ import ProfilePhoto from "../../../assets/images/user-profile-photo.jpg";
 import Button from "../../utils/Button/Button";
 import AddCommentIcon from "../../../assets/images/icons/add_comment.svg";
 
-export default function CommentForm() {
+export default function CommentForm({ onCommentSubmit }) {
   const commentInput = useRef(null);
 
   const handleSubmit = () => {
     const comment = commentInput.current.value;
-    console.log(comment);
+    onCommentSubmit(comment);
     commentInput.current.value = "";
   };
 

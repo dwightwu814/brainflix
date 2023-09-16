@@ -18,12 +18,12 @@ function OneComment({ comment }) {
   );
 }
 
-export default function Comments({ comments }) {
+export default function Comments({ comments, onCommentSubmit }) {
   const commentsLength = comments.length;
   return (
     <section className="comments">
       <h2 className="comments__title">{`${commentsLength} Comments`}</h2>
-      <CommentForm />
+      <CommentForm onCommentSubmit={onCommentSubmit} />
       {comments.map((comment) => {
         return <OneComment key={comment.id} comment={comment} />;
       })}
