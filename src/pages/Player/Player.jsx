@@ -32,7 +32,7 @@ const getVideo = async (videoId, handleResult) => {
 };
 
 function PlayerPage() {
-  const { videoId } = useParams();
+  const { videoId, userName } = useParams();
 
   const [videos, setVideos] = useState([]);
   const [currentVideoId, setCurrentVideoId] = useState(null);
@@ -66,7 +66,12 @@ function PlayerPage() {
       <section className="section player-page">
         <section className="player-page__first">
           <Header video={currentVideo} />
-          <Comments comments={currentVideo ? currentVideo.comments : []} />
+          <Comments
+            comments={currentVideo ? currentVideo.comments : []}
+            onSubmit={(comment) => {
+              console.log(comment);
+            }}
+          />
         </section>
         <section className="player-page__second">
           <NextVideosGallery

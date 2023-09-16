@@ -1,9 +1,18 @@
+import React, { useRef } from "react";
 import "./CommentForm.scss";
 import ProfilePhoto from "../../../assets/images/user-profile-photo.jpg";
 import Button from "../../utils/Button/Button";
 import AddCommentIcon from "../../../assets/images/icons/add_comment.svg";
 
 export default function CommentForm() {
+  const commentInput = useRef(null);
+
+  const handleSubmit = () => {
+    const comment = commentInput.current.value;
+    console.log(comment);
+    commentInput.current.value = "";
+  };
+
   return (
     <section className="comment__form">
       <img
@@ -15,13 +24,20 @@ export default function CommentForm() {
         <div className="comment__form--form">
           <span className="comment__form--text">Join the conversation</span>
           <textarea
+            ref={commentInput}
             className="comment__form--input"
             type="text"
             placeholder="Add a new comment"
           />
         </div>
         <div className="comment__form--submit">
-          <Button text="Comment" icon={AddCommentIcon} />
+          <Button
+            text="Comment"
+            icon={AddCommentIcon}
+            handleClick={() => {
+              handleSubmit();
+            }}
+          />
         </div>
       </form>
     </section>
