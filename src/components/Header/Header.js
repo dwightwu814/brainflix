@@ -11,17 +11,17 @@ export default function Header({ video }) {
       <h1 className="header__title">{video.title}</h1>
       <section className="header__menu">
         <section className="header__menu--item">
-          <div className="header__menu--author">{`By ${video.channel}`}</div>
-          <div className="header__menu--date">
+          <div className="header__author">{`By ${video.channel}`}</div>
+          <div className="header__date">
             {timestampToTimeString(video.timestamp)}
           </div>
         </section>
         <section className="header__menu--item">
-          <div className="header__menu--stats">
+          <div className="header__stats">
             <img src={ViewsIcon} alt="views" />
             {video.views}
           </div>
-          <div className="header__menu--stats">
+          <div className="header__stats">
             <img src={LikesIcon} alt="likes" />
             {video.likes}
           </div>

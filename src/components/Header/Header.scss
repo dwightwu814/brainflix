@@ -39,15 +39,6 @@
       }
     }
 
-    &--author {
-      @include subheader;
-    }
-
-    &--date {
-      @include regular;
-      color: $silver;
-    }
-
     &--stats {
       @include regular;
       color: $silver;
@@ -55,6 +46,15 @@
       align-items: center;
       gap: $padding-xsm;
     }
+  }
+
+  &__author {
+    @include subheader;
+  }
+
+  &__date {
+    @include regular;
+    color: $silver;
   }
 
   &__description {
