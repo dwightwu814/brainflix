@@ -22,7 +22,7 @@ export default function Comments({ comments }) {
   const commentsLength = comments.length;
   return (
     <section className="comments">
-      <h2 className="comments__title">`${commentsLength} Comments`</h2>
+      <h2 className="comments__title">{`${commentsLength} Comments`}</h2>
       <CommentForm />
       {comments.map((comment) => {
         return <OneComment key={comment.id} comment={comment} />;
