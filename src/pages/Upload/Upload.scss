@@ -93,6 +93,7 @@
     @include mobile {
       gap: $padding-sm;
       padding-top: $padding-sm;
+      flex-direction: column-reverse;
     }
   }
 
