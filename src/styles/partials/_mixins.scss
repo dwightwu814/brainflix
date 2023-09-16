@@ -90,6 +90,13 @@
   border: 1px solid $mercury;
   background-color: $alabaster;
   height: $button-height;
+  @include regular;
+  padding-top: calc($button-height / 2 - 11px);
+
+  @include mobile {
+    padding-top: calc($button-height / 2 - 9px);
+  }
+
   &::placeholder {
     @include regular;
     position: absolute;
