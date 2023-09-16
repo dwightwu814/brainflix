@@ -14,16 +14,18 @@ function Searchbar() {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ userName }) {
+  const homeLink = userName ? `/${userName}` : "/";
+  const uploadLink = userName ? `/upload/${userName}` : "/upload";
   return (
     <section className="section navbar">
-      <Link to="/" className="navbar__link">
+      <Link to={homeLink} className="navbar__link">
         <img className="navbar__logo" src={Logo} alt="logo" href="." />
       </Link>
       <div className="navbar__menu">
         <Searchbar />
         <div className="navbar__button">
-          <Link to="/upload" className="navbar__link">
+          <Link to={uploadLink} className="navbar__link">
             <Button icon={UploadIcon} text="Upload" />
           </Link>
         </div>

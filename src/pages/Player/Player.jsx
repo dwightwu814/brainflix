@@ -86,7 +86,7 @@ function PlayerPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar userName={userName} />
       <VideoPlayer posterUrl={currentVideo ? currentVideo.image : null} />
       <section className="section player-page">
         <section className="player-page__first">
@@ -110,6 +110,7 @@ function PlayerPage() {
             videos={videos.filter((video) => {
               return video.id !== currentVideoId;
             })}
+            userName={userName}
           />
         </section>
       </section>

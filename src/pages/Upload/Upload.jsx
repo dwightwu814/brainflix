@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Upload.scss";
 import UploadThumbnail from "../../assets/images/upload-thumbnail.jpg";
 import PublishIcon from "../../assets/images/icons/publish.svg";
@@ -74,9 +74,10 @@ function UploadForm() {
 }
 
 export default function UploadPage() {
+  const { userName } = useParams();
   return (
     <>
-      <Navbar />
+      <Navbar userName={userName} />
       <section className="section upload-page">
         <section className="upload-page__title">
           <h1 className="upload-page__title--text">Upload Video</h1>
